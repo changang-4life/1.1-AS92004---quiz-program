@@ -1,7 +1,7 @@
 """ General knowledge quiz program that tests students' knowledge of 
 New Zealand. The quiz is only meant for children from 5 to 11 years of age.
 
-v5 - Age Mechanics Set Up
+v6 - age_check()
 """
 
 quizA_ques = ["1. What is the capital of New Zealand?\n", "2. Which city is known as 'The Garden City'?\n", "3. Where did L&P soda originally come from?\n", "4. In what month is Matariki celebrated?\n", "5. What colour is Kakariki?\n"]
@@ -29,8 +29,21 @@ quizB_ques3_op = ["A) Taihape", "B) Waihi", "C) Paeroa", "D) Ohakune"]
 quizB_ques4_op = ["A) Top of the North Island", "B) Bottom of the South Island", "C) Bottom of the North Island", "D) Top of the South Island"]
 quizB_ques5_op = ["A) 1815", "B) 1840", "C) 1855", "D) 1875"]
 
+def age_check(question):
+    """ Checks for valid age """
+    # Different message for each type of possible error
+    int_error = "\nSorry, you must enter an valid integer."
+    age_error = "\nThe age range for this program is between 5 and 11."
+    age_ = ''
+    while not age_:
+        try:
+            age_ = int(input(question))
+        except ValueError:
+            print(int_error)
+    return age_
 
-def quizA(): # For Quiz A
+def quizA():
+    """ Quiz A's Program """
 
     score = 0
     print(quizA_ques[0]) # Question 1 is called
@@ -193,12 +206,13 @@ def quizB(): # For Quiz B
         print("Sorry, that was wrong.")
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    
 
-name = str(input("What is your name?: "))
+# Main Routine
+
+name = str(input("What's your name?: "))
 name = name.capitalize()
 
-age = int(input("What is your age in years?: "))
+age = age_check("What's your age in years?: ")
 
 valid_age = False
 
@@ -212,10 +226,20 @@ if age <= 7 and age >= 5: # if the user's age is less than or equal to 7 AND gre
 if age > 7 and age <= 11: # if the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
     quizB_age = True
     valid_age = True
-
-if valid_age == False: # if their age is anything out of the required age range, they get kicked out
+    
+while valid_age == False: # if their age is anything out of the required age range, they get kicked out
     print("Sorry, this program is only meant for children from ages 5 - 11.")
-    valid_age = False
+    age = age_check("What's your age in years?: ")
+    
+    if age <= 7 and age >= 5: # if the user's age is less than or equal to 7 AND greater than or equal to 5 (5 - 7), they get Quiz A
+        quizA_age = True
+        valid_age = True
+    
+    if age > 7 and age <= 11: # if the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
+        quizB_age = True
+        valid_age = True
+
+
 
 rules = '1. The quizes are only meant for children whose ages are from 5 - 11 years\n\
 \n2. Each quiz will consist of atleast 5 qustions\n\

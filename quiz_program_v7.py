@@ -1,7 +1,7 @@
 """ General knowledge quiz program that tests students' knowledge of 
 New Zealand. The quiz is only meant for children from 5 to 11 years of age.
 
-v5 - Age Mechanics Set Up
+v7 - name_check(name)
 """
 
 quizA_ques = ["1. What is the capital of New Zealand?\n", "2. Which city is known as 'The Garden City'?\n", "3. Where did L&P soda originally come from?\n", "4. In what month is Matariki celebrated?\n", "5. What colour is Kakariki?\n"]
@@ -21,7 +21,7 @@ quizA_ques1_op = ["A) Auckland", "B) Wellington", "C) Christchurch", "D) Hamilto
 quizA_ques2_op = ["A) Wellington", "B) Christchurch", "C) Paeroa", "D) Auckland\n"]
 quizA_ques3_op = ["A) Putaruru", "B) Waihi", "C) Paeroa", "D) Auckland\n"]
 quizA_ques4_op = ["A) April", "B) May", "C) May, June, July", "D) July\n"]
-quizA_ques5_op = ["A) Green", "B) Blue", "C) Black", "D) Grey"]
+quizA_ques5_op = ["A) Green", "B) Blue", "C) Black", "D) Grey\n"]
 
 quizB_ques1_op = ["A) Wellington Strait", "B) Tasman Chennel", "C) Cook Strait", "D) Kaikoura Strait"]
 quizB_ques2_op = ["A) Wellington", "B) Christchurch", "C) Paeroa", "D) Auckland"]
@@ -30,7 +30,28 @@ quizB_ques4_op = ["A) Top of the North Island", "B) Bottom of the South Island",
 quizB_ques5_op = ["A) 1815", "B) 1840", "C) 1855", "D) 1875"]
 
 
-def quizA(): # For Quiz A
+def name_check(name):
+    while True:
+        if name.isalpha() and len(name) >= 3:
+            break
+        else:
+            name = input("Enter a valid name: ")
+    return name.capitalize()
+
+def age_check(question):
+    """ Checks for valid integer """
+    int_error = "\nSorry, you must enter a valid integer."
+    age_ = ''
+    while not age_:
+        try:
+            age_ = int(input(question))
+        except ValueError:
+            print(int_error)
+    return age_
+
+
+def quizA():
+    """ Quiz A's Program """
 
     score = 0
     print(quizA_ques[0]) # Question 1 is called
@@ -105,11 +126,16 @@ def quizA(): # For Quiz A
     user_answer = str(input(">> ")) # Program takes the user's answer input
 
     if user_answer.capitalize() == quizA_answers[4]: # If the user's answer matches this quiz's fifth answer (index 4)...
-        print("Wow! Good Job!") # ... they get that question right
+        print("Wow, good Job! You got the last question right!") # ... they get that question right
         score += 1
 
     if user_answer.capitalize() != quizA_answers[4]: # However, if the user's answer does NOT match the fifth answer of this quiz's answer list...
         print("Sorry, that was incorrect.")
+
+    if score >= 3:
+        print(f"You scored {score} points out of 5! Well done!")
+    else:
+        print(f"You got {score} out of 5 points.... :(")
 
 
 def quizB(): # For Quiz B
@@ -192,13 +218,27 @@ def quizB(): # For Quiz B
     if user_answer != quizB_answers[4]:
         print("Sorry, that was wrong.")
 
-    # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    
+    if score >= 3:
+        print(f"You scored {score} points out of 5! Well done!")
+    else:
+        print(f"You got {score} out of 5 points.... :(")
+# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-name = str(input("What is your name?: "))
-name = name.capitalize()
+# Main Routine
 
-age = int(input("What is your age in years?: "))
+print("\n= = = = = = = = = = Kiwi Quiz = = = = = = = = = =\n")
+print()
+print("1. The quizes are only meant for children whose ages are from 5 - 11 years\n\
+\n2. Each quiz will consist of atleast 5 qustions\n\
+\n3.  There are two quiz sets available and you have been given a specific one\n\
+    depending on your age (5-7 or 8-11). If you are older but you just want \n\
+    something you can breeze through, or you're younger and you would like a \n\
+    challenge, pick the opposite age group.\n") # Prints quiz rules
+
+name = input("Please enter your name: ")
+name = name_check(name)
+
+age = age_check("What's your age in years?: ")
 
 valid_age = False
 
@@ -212,19 +252,24 @@ if age <= 7 and age >= 5: # if the user's age is less than or equal to 7 AND gre
 if age > 7 and age <= 11: # if the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
     quizB_age = True
     valid_age = True
+    
+while valid_age == False: # if their age is anything out of the required age range, they get kicked out
+    print("\nSorry, this program is only meant for children from ages 5 - 11.")
+    age = age_check("What's your age in years?: ")
 
-if valid_age == False: # if their age is anything out of the required age range, they get kicked out
-    print("Sorry, this program is only meant for children from ages 5 - 11.")
-    valid_age = False
-
-rules = '1. The quizes are only meant for children whose ages are from 5 - 11 years\n\
-\n2. Each quiz will consist of atleast 5 qustions\n\
-\n3.  There are two quiz sets available and you have been given a specific one\n\
-    depending on your age (5-7 or 8-11). If you are older but you just want \n\
-    something you can breeze through, or youre younger and you would like a \n\
-    challenge, pick your opposite age group. \n'
+    if age <= 7 and age >= 5: # if the user's age is less than or equal to 7 AND greater than or equal to 5 (5 - 7), they get Quiz A
+        quizA_age = True
+        valid_age = True
+    
+    if age > 7 and age <= 11: # if the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
+        quizB_age = True
+        valid_age = True
 
 if valid_age == True:
-    print(f"Hello there, {name}. Welcome to the Kiwi Quiz!\nHere are the rules: ") # Welcome
+    print(f"\nHey there, {name}. Welcome to the Kiwi Quiz!\n\tLet's begin...\n") # Welcome
 
-    print(rules) # prints the rules variable
+if quizA_age == True:
+    quizA()
+elif quizB_age == True:
+    quizB()
+
