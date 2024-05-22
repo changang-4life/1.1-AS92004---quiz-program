@@ -4,7 +4,7 @@ New Zealand. The quiz is only meant for children from 5 to 11 years of age.
 v7 - name_check(name)
 """
 
-quizA_ques = ["1. What is the capital of New Zealand?\n", "2. Which city is known as 'The Garden City'?\n", "3. Where did L&P soda originally come from?\n", "4. In what month is Matariki celebrated?\n", "5. What colour is Kakariki?\n"]
+quizA_ques = ["1. What is the capital of New Zealand?\n", "2. Which city is known as 'The Garden City'?\n", "3. Where did L&P soda originally come from?\n", "4. In what month is Matariki celebrated?\n", "5. What colour is kakariki?\n"]
     # List for each question in Quiz A. Each question will be printed out when needed with its corresponding index number.
 
 quizB_ques = ["1. What is the anme of the stretch of water that seperates the North and South Islands?\n", "2. Which New Zealand city houses the Beehive?\n", "3. Which town has a giant carrot as a landmark?\n", "4. Where is 90 mile beach?\n", "5. When was the Treaty of Waitangi signed?\n"]
@@ -203,7 +203,7 @@ def quizB(): # For Quiz B
         print("Sorry, that was wrong.")
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    
+
     print(quizB_ques[4])
     for options in quizB_ques5_op:
         print(options)
@@ -235,33 +235,33 @@ print("1. The quizes are only meant for children whose ages are from 5 - 11 year
     something you can breeze through, or you're younger and you would like a \n\
     challenge, pick the opposite age group.\n") # Prints quiz rules
 
-name = input("Please enter your name: ")
-name = name_check(name)
+name = input("Please enter your name: ") # Program asks for user input name
+name = name_check(name) # name_check function checks that the name is valid. Function will return the capitalized name once it confirms it is valid. This is what the function will return
 
-age = age_check("What's your age in years?: ")
+age = age_check("What's your age in years?: ") # Takes age input and checks that it is valid
 
-valid_age = False
+valid_age = False # Variable that helps the program determine whether the user's age is considered valid (True) or invalid (False). If it's invalid, it prints an error message and asks them to re-enter
 
-quizA_age = False
-quizB_age = False
+quizA_age = False # Helps the program decide which quiz to run
+quizB_age = False # (Same as above)
 
-if age <= 7 and age >= 5: # if the user's age is less than or equal to 7 AND greater than or equal to 5 (5 - 7), they get Quiz A
+if age <= 7 and age >= 5: # If the user's age is less than or equal to 7 AND greater than or equal to 5 (5 - 7), they get Quiz A
     quizA_age = True
     valid_age = True
     
-if age > 7 and age <= 11: # if the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
+if age > 7 and age <= 11: # If the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
     quizB_age = True
     valid_age = True
     
-while valid_age == False: # if their age is anything out of the required age range, they get kicked out
-    print("\nSorry, this program is only meant for children from ages 5 - 11.")
+while valid_age == False: # If their age is anything out of the required age range, they get kicked out
+    print("\nSorry, this program is only meant for children aged from 5 - 11 years.")
     age = age_check("What's your age in years?: ")
 
-    if age <= 7 and age >= 5: # if the user's age is less than or equal to 7 AND greater than or equal to 5 (5 - 7), they get Quiz A
+    if age <= 7 and age >= 5: # If the user's age is less than or equal to 7 AND greater than or equal to 5 (5 - 7), they get Quiz A
         quizA_age = True
         valid_age = True
     
-    if age > 7 and age <= 11: # if the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
+    if age > 7 and age <= 11: # If the user's age is greater than 7 AND less than or equal to 11 (7 - 11), they get Quiz B
         quizB_age = True
         valid_age = True
 
@@ -272,4 +272,3 @@ if quizA_age == True:
     quizA()
 elif quizB_age == True:
     quizB()
-
