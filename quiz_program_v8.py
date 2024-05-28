@@ -19,7 +19,7 @@ quizB_answers = ['C', 'A', 'D', 'A', 'B']
 ABCD = ['A','B', 'C', 'D'] # Creating a list for possible answers makes programming error-handeling way easier / less tedious
 
 # Lists of options created for each question in the quizes so programmers can go back and edit questions as they please easily. Makes the functions more concise.
-quizA_ques1_op = ["A) Auckland", "B) Wellington", "C) Christchurch", "D) Hamilton\n"] 
+quizA_ques1_op = ["A) Auckland", "B) Wellington", "C) Christchurch", "D) Hamilton\n"]
 quizA_ques2_op = ["A) Wellington", "B) Christchurch", "C) Paeroa", "D) Auckland\n"]
 quizA_ques3_op = ["A) Putaruru", "B) Waihi", "C) Paeroa", "D) Auckland\n"]
 quizA_ques4_op = ["A) April", "B) May", "C) May, June, July", "D) July\n"]
@@ -321,7 +321,7 @@ def quizB(): # For Quiz B
 
     if score >= 3:
         print(f"You scored {score} points out of 5! Well done!")
-        
+
     elif score != 1:
         print(f"You scored {score} out of 5 points.... better luck next time!")
 

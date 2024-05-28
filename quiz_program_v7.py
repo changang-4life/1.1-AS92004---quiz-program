@@ -80,8 +80,7 @@ def quizA():
     if user_answer.capitalize() == quizA_answers[1]: # If the user's answer matches this quiz's second answer (index 1)...
         print("Well done, you got that right!") # ... then they get that question right
         score += 1 # 1 point is added
-    
-    if user_answer.capitalize() != quizA_answers[1]: # However, if the user's answer does NOT match the second answer of this quiz's answer list...
+    elif user_answer.capitalize() != quizA_answers[1]: # However, if the user's answer does NOT match the second answer of this quiz's answer list...
         print('Sorry, that was incorrect.')
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -97,7 +96,7 @@ def quizA():
         print("Wel done, you got that right!") # ... then they get that question right
         score += 1
 
-    if user_answer.capitalize() != quizA_answers[2]: # However, if the user's answer does NOT match the third answer of this quiz's answer list...
+    elif user_answer.capitalize() != quizA_answers[2]: # However, if the user's answer does NOT match the third answer of this quiz's answer list...
         print("Sorry, that was incorrect.") # ... they get that quesiton wrong
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -113,7 +112,7 @@ def quizA():
         print("Well done, you got right!") # ... then they get that question right
         score += 1
 
-    if user_answer.capitalize() != quizA_answers[3]: # However, if the user's answer does NOT match the fourth answer of this quiz's answer list...
+    elif user_answer.capitalize() != quizA_answers[3]: # However, if the user's answer does NOT match the fourth answer of this quiz's answer list...
         print("Sorry, that was incorrect.") # ... they get that question wrong
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -129,7 +128,7 @@ def quizA():
         print("Wow, good Job! You got the last question right!") # ... they get that question right
         score += 1
 
-    if user_answer.capitalize() != quizA_answers[4]: # However, if the user's answer does NOT match the fifth answer of this quiz's answer list...
+    elif user_answer.capitalize() != quizA_answers[4]: # However, if the user's answer does NOT match the fifth answer of this quiz's answer list...
         print("Sorry, that was incorrect.")
 
     if score >= 3:
@@ -151,7 +150,7 @@ def quizB(): # For Quiz B
         print("Well done, you got that right!") # ... they get that question right
         score += 1
 
-    if user_answer != quizB_answers[0]: # However, if the user's answer does NOT match the first answer of this quiz's answer list...
+    elif user_answer != quizB_answers[0]: # However, if the user's answer does NOT match the first answer of this quiz's answer list...
         print("Sorry, that was wrong)")
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -167,7 +166,7 @@ def quizB(): # For Quiz B
         print("Well done, you got that right!")
         score += 1
 
-    if user_answer != quizB_answers[1]:
+    elif user_answer != quizB_answers[1]:
         print("Sorry, that was wrong.")
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -183,7 +182,7 @@ def quizB(): # For Quiz B
         print("Well done, you got that right!")
         score += 1
 
-    if user_answer != quizB_answers[2]:
+    elif user_answer != quizB_answers[2]:
         print("Sorry, that was wrong.")
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -199,7 +198,7 @@ def quizB(): # For Quiz B
         print("Well done, you got that right!")
         score += 1
 
-    if user_answer != quizB_answers[3]:
+    elif user_answer != quizB_answers[3]:
         print("Sorry, that was wrong.")
 
     # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -215,7 +214,7 @@ def quizB(): # For Quiz B
         print("Well done, you got that right!")
         score += 1
 
-    if user_answer != quizB_answers[4]:
+    elif user_answer != quizB_answers[4]:
         print("Sorry, that was wrong.")
 
     if score >= 3:
