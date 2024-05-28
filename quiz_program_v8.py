@@ -173,17 +173,19 @@ def quizA():
             if user_answer.capitalize() in ABCD:
                 break
 
-    if user_answer.capitalize() == quizA_answers[4]: # If the user's answer matches this quiz's fifth answer (index 4)...
-        print("Wow, good Job! You got the last question right!") # ... they get that question right
-        score += 1
+    if user_answer.capitalize() == quizA_answers[4]: # If the user's answer matches this quiz's fifth answer (index 4) 
+        score += 1 # ... they get that question right and their score is incremented by 1
 
     elif user_answer.capitalize() != quizA_answers[4]: # However, if the user's answer does NOT match the fifth answer of this quiz's answer list...
         print("Sorry, that was incorrect.")
 
     if score >= 3:
         print(f"You scored {score} points out of 5! Well done!")
-    else:
-        print(f"You got {score} out of 5 points.... :(")
+    elif score != 1:
+        print(f"You scored {score} out of 5 points... better luck next time!")
+        
+        if score == 1:
+            print(f"You scored 1 out of 5 points... better luck next time!")
 
 
 def quizB(): # For Quiz B
@@ -319,8 +321,13 @@ def quizB(): # For Quiz B
 
     if score >= 3:
         print(f"You scored {score} points out of 5! Well done!")
-    else:
-        print(f"You got {score} out of 5 points.... :(")
+        
+    elif score != 1:
+        print(f"You scored {score} out of 5 points.... better luck next time!")
+
+        if score == 1:
+            print(f"You scored 1 out of 5 points... better luck next time!")
+
 # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
 # Main Routine

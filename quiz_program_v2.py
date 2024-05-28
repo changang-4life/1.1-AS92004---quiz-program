@@ -30,7 +30,7 @@ quizA_answers = ['B', 'B', 'C', 'C', 'A'] # Quiz answers placed in a list for ea
 # The answers for quiz A. The program will decide whether a user's answer is right or wrong using these answers and their index number depending on which question is being marked
 
 quizA_ques1_op = ["A) Auckland", "B) Wellington", "C) Christchurch", "D) Hamilton\n"] # Lists of options created for each question in the quiz so programmers can go back and edit questions as they please easily
-quizA_ques2_op = ["A) Wellington", "B) Christchurch", "C) Paeroa", "D) Auckland\n"]
+quizA_ques2_op = ["A) Wellingto n", "B) Christchurch", "C) Paeroa", "D) Auckland\n"]
 quizA_ques3_op = ["A) Putaruru", "B) Waihi", "C) Paeroa", "D) Auckland\n"]
 quizA_ques4_op = ["A) April", "B) May", "C) May, June, July", "D) July\n"]
 quizA_ques5_op = ["A) Green", "B) Blue", "C) Black", "D) Grey"]
