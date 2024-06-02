@@ -66,24 +66,29 @@ quiz_b_ques5_op = ["A. 1815", "B. 1840", "C. 1855", "D. 1875"]
 def name_check(name):
     """Check for valid name."""
     while True:
-        if name.isalpha() and len(name) >= 3:
-            break
+        if name.isalpha() and len(name) >= 3: # if name is completely a string
+            # and its length is equal to or more than 3, the name is considered
+            # valid
+            break # and the loop breaks
         else:
             name = input("Enter a valid name: ")
-    return name.capitalize()
+            # else, the loop asks them to input a valid name
+    return name.capitalize() # when the loop finishes, the user's capitalized
+    # name is returned
 
 
 def age_check(question):
     """Check for valid integer."""
     int_error = "\n🚨❗ ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ 🚨 Sorry, you must enter a valid \
-integer. 🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨"
+integer. 🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨" # error message that will print if the user
+# does not enter a number
     age_ = ''
     while not age_:
         try:
             age_ = int(input(question))
-        except ValueError:
-            print(int_error)
-    return age_
+        except ValueError: # if there is a value error
+            print(int_error) # the message pritns
+    return age_ # age is returned when loop terminates
 
 
 def quiz_a():
@@ -100,12 +105,14 @@ def quiz_a():
         if user_answer.capitalize() not in ABCD:  # If the user enters
             # something other than A, B C, or D.
 
-            while user_answer.capitalize() not in ABCD:
+            while user_answer.capitalize() not in ABCD: # if their answer is
+                # not in the ABCD list,
                 print("\n🚨❗ ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ 🚨 Please enter either A, B, C, \
-or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
-                user_answer = str(input(">> "))
+or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨") # an error message prints out
+                user_answer = str(input(">> ")) # loop where they have to
+                # enter a valid answer ( ABCD ) to break
 
-                if user_answer.capitalize() in ABCD:
+                if user_answer.capitalize() in ABCD: # if their answer is valid
                     break
 
         if user_answer.capitalize() == quiz_a_ans[0]:  # If the user's
@@ -123,7 +130,6 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
         print(quiz_a_ques[1])  # Question 2 is called
-
         for options in quiz_a_ques2_op:
             print(options)  # Question 2's options are displayed
 
@@ -155,7 +161,6 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
         print(quiz_a_ques[2])  # Question 3 is called
-
         for options in quiz_a_ques3_op:
             print(options)  # Question 3's options are displayed
 
@@ -188,7 +193,6 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
         print(quiz_a_ques[3])  # Question 4 is called
-
         for options in quiz_a_ques4_op:
             print(options)  # Question 4's options are displayed
 
@@ -220,7 +224,6 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
     # . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . .
 
         print(quiz_a_ques[4])  # Question 5 is called
-
         for options in quiz_a_ques5_op:
             print(options)
 
@@ -265,18 +268,20 @@ luck next time!")
         while replay.capitalize() != 'Y' or replay.capitalize() != 'N':
             # checks if they input anything other than Y or N
             if replay.capitalize() == 'Y' or replay.capitalize() == 'N':
-                break
+                break # if their input == Y or N, then the loop breaks
             else:
                 replay = str(input("Please enter either Y or N: "))
+                # else, the program asks them to input Y or N again
 
 
-        if replay.capitalize() == 'Y':
-            # if they input Y, the quiz restarts
+        if replay.capitalize() == 'Y': # if the user's input == Y, then the
             continue
+            # quiz restarts
 
         elif replay.capitalize() == 'N':
-            # if they input N, the program finishes
+            # if they input N
             break
+            # the program finishes
 
 
 def quiz_b(): 
@@ -285,7 +290,7 @@ def quiz_b():
         score = 0
         print(quiz_b_ques[0])  # Question 1 is called
         for options in quiz_b_ques1_op:
-            print(options)
+            print(options) # options for the question are printed
 
         user_answer = str(input(">> "))  # Program takes the user's answer
         # input
@@ -315,8 +320,8 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
 
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-        print(quiz_b_ques[1])
-        for options in quiz_b_ques2_op:
+        print(quiz_b_ques[1]) # question is printed
+        for options in quiz_b_ques2_op: # options for the question are printed
             print(options)
 
         user_answer = str(input(">> "))
@@ -343,8 +348,8 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
 
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-        print(quiz_b_ques[2])
-        for options in quiz_b_ques3_op:
+        print(quiz_b_ques[2]) # question is printed
+        for options in quiz_b_ques3_op: # options for the question are pritned
             print(options)
 
         user_answer = str(input(">> "))
@@ -371,8 +376,8 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
 
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-        print(quiz_b_ques[3])
-        for options in quiz_b_ques4_op:
+        print(quiz_b_ques[3]) # question is printed
+        for options in quiz_b_ques4_op: # options for the questions are printed
             print(options)
 
         user_answer = str(input(">> "))
@@ -399,8 +404,8 @@ or D.🚨 ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ❗🚨")
 
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-        print(quiz_b_ques[4])
-        for options in quiz_b_ques5_op:
+        print(quiz_b_ques[4]) # options are printed
+        for options in quiz_b_ques5_op: # options for the questions are printed
             print(options)
 
         user_answer = str(input(">> "))
@@ -436,18 +441,25 @@ time!")
                 print(f"You scored 1 out of 5 points... better luck next\
 time!")
 
-    # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-            
+    # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+        replay = str(input('Do you want to play again? (Y / N): ')) # takes
+        # the user input, Y or N, asks if they want to replay the game or not
+
         while replay.capitalize() != 'Y' or replay.capitalize() != 'N':
+            # checks if they input anything other than Y or N
             if replay.capitalize() == 'Y' or replay.capitalize() == 'N':
-                break
+                break # if their input == Y or N, then the loop breaks
             else:
                 replay = str(input("Please enter either Y or N: "))
+                # else the program asks the user to input Y or N again
 
-            if replay.capitalize() == 'Y':
+            if replay.capitalize() == 'Y': # if the user input == Y, then the
+                # quiz restarts
                 continue
 
             elif replay.capitalize() == 'N':
+                # else, if the input == N, the program finishes.
                 break
 
 
